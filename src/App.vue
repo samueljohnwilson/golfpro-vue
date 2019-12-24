@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <MenuBar/>
-    <Navigation
-      v-model="drawer"
-    />
+    <Navigation/>
     <v-content>
       <Landing/>
     </v-content>

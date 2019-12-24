@@ -19,19 +19,21 @@
 
     <v-spacer></v-spacer>
 
-    <v-icon
-      @click.stop="drawer = !drawer"
-    >
+    <v-icon @click="openDrawer">
       mdi-menu
     </v-icon>
   </v-app-bar>
 </template>
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'MenuBar',
 
-  data: () => ({
-    drawer: false,
-  }),
+  methods: {
+    ...mapActions('navigation', [
+      'openDrawer',
+    ]),
+  }
 };
 </script>

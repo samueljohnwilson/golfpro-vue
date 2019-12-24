@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    v-model="localDrawer"
+    v-model="drawerState"
     absolute
     right
     temporary
@@ -37,28 +37,36 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Navigation',
 
-    props: {
-      value: {
-        type: Boolean,
-      }
-    },
-
-    watch: {
-      value: function() {
-        this.localDrawer = this.value
+  computed: {
+    ...mapGetters('navigation', [
+      'drawer',
+    ]),
+    drawerState: {
+      get: function() { 
+        return this.drawer
       },
-      localDrawer: function() {
-        this.$emit('input', this.localDrawer)
+      set: function(drawer) {
+        // Set the Vuex state to match the local v-model
+        if (!drawer) {
+          this.closeDrawer();
+        }
       }
-    },
+    }
+  },
+
+  methods: {
+    ...mapActions('navigation', [
+      'closeDrawer',
+    ]),
+  },
 
   data: function() {
     return {
-      localDrawer: this.value,
       items: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' },

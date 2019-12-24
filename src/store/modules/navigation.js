@@ -11,6 +11,9 @@ const getters = {
 const actions = {
   openDrawer({ commit }) {
     commit('SET_DRAWER', true);
+  },
+  closeDrawer({ commit }) {
+    commit('SET_DRAWER', false);
   }
 };
 
