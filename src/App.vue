@@ -1,5 +1,7 @@
 <template>
-  <v-app>
+  <v-app
+    style="background-color: black"
+  >
     <MenuBar/>
     <Navigation/>
     <v-content>
