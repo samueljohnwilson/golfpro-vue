@@ -6,7 +6,7 @@
   >
     <v-img src="../assets/golfpro-background-small.png" max-width="250" contain/>
     <div class="auth-wrapper">
-      <v-img class="login" src="../assets/login-white.png" max-width="125" max-height="80" contain/>
+      <v-btn large ripple outlined color="white">Log In</v-btn>
       <span class="signup">Not a member? Then sign up <a>here</a>.</span>
     </div>
   </v-layout>
@@ -15,10 +15,6 @@
 <script>
 export default {
   name: 'Landing',
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 <style lang="less" scoped>
@@ -40,6 +36,13 @@ export default {
     a {
       text-decoration: underline;
     }
+  }
+
+  v-button {
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px;
+    min-width: 100px;
   }
 
   .signup {
