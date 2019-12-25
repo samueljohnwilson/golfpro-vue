@@ -69,7 +69,9 @@ export default {
     return {
       items: [
         { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' },
+        { title: 'My Stats', icon: 'insert_chart' },
+        { title: 'My Courses', icon: 'golf_course' },
+        { title: 'Account', icon: 'account_box' },
       ],
     }
   },

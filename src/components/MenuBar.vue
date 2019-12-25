@@ -20,7 +20,7 @@
     <v-spacer></v-spacer>
 
     <v-icon @click="openDrawer" large>
-      mdi-menu
+      menu
     </v-icon>
   </v-app-bar>
 </template>
