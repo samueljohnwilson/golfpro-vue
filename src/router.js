@@ -13,6 +13,6 @@ const routes = [
   // { path: '/home', component: HomePage }
 ]
 
-export const router = new VueRouter({
+export default new VueRouter({
   routes
 })

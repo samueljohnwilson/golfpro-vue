@@ -19,16 +19,32 @@
 
     <v-spacer></v-spacer>
 
-    <v-icon @click="openDrawer" large>
+    <v-icon
+      v-if="user"
+      @click="openDrawer"
+      large
+    >
       menu
     </v-icon>
   </v-app-bar>
 </template>
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'MenuBar',
+
+  data: function() {
+    return {
+      user: true,
+    }
+  },
+
+  computed: {
+    ...mapGetters('user', [
+      'user',
+    ])
+  },
 
   methods: {
     ...mapActions('navigation', [

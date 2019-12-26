@@ -6,12 +6,20 @@
   >
     <v-img src="../assets/golfpro-background-small.png" max-width="250" contain/>
     <div class="auth-wrapper">
-      <v-btn large ripple outlined color="white">Log In</v-btn>
+      <router-link to='/home'>
+        <v-btn
+          large
+          ripple
+          outlined
+          color="white"
+        >
+          Log In
+        </v-btn>
+      </router-link>
       <span class="signup">Not a member? Then sign up <a>here</a>.</span>
     </div>
   </v-layout>
 </template>
-
 <script>
 export default {
   name: 'Landing',
@@ -32,20 +40,19 @@ export default {
     a {
       color: white;
     }
-
-    a {
-      text-decoration: underline;
-    }
   }
 
-  v-button {
-    border: 1px solid white;
-    border-radius: 4px;
-    padding: 8px;
-    min-width: 100px;
+  .auth-wrapper {
+    a {
+      text-decoration: none;
+    }
   }
 
   .signup {
     margin-top: 8px;
+  
+    a {
+      text-decoration: underline;
+    }
   }
 </style>

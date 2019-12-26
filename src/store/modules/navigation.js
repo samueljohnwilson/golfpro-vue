@@ -5,7 +5,7 @@ const state = {
 };
 
 const getters = {
-  drawer: (_state) => _state.drawer
+  drawer: (_state) => _state.drawer,
 };
 
 const actions = {
