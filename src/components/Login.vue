@@ -27,7 +27,7 @@
               persistent-hint
             ></v-text-field>
           </ValidationProvider>
-          <ValidationProvider name="password" :rules="{ regex: /^[0-9]+$/, message: 'busted' }"  v-slot="{ errors, valid }">
+          <ValidationProvider name="password" :rules="rules.password"  v-slot="{ errors, valid }">
             <v-text-field
               v-model="password"
               :error-messages="errors"
@@ -60,12 +60,14 @@ import {
   ValidationObserver,
   ValidationProvider
 } from "vee-validate";
+import { rules } from '../validations';
 
 export default {
   data: () => ({
     name: "",
     email: "",
     password: "",
+    rules
   }),
   components: {
     ValidationProvider,
