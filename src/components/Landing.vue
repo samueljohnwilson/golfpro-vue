@@ -4,6 +4,10 @@
     text-center
     wrap
   >
+    <Modal
+      @close-modal="dialog = false"
+      :dialog="dialog"
+    />
     <v-img src="../assets/golfpro-background-small.png" max-width="250" contain/>
     <div class="auth-wrapper">
       <router-link to='/home'>
@@ -12,6 +16,7 @@
           ripple
           outlined
           color="white"
+          @click.stop="dialog = true"
         >
           Log In
         </v-btn>
@@ -21,8 +26,19 @@
   </v-layout>
 </template>
 <script>
+import Modal from './Modal.vue';
 export default {
   name: 'Landing',
+
+  data: function() {
+    return {
+      dialog: false,
+    }
+  },
+
+  components: {
+    Modal,
+  }
 };
 </script>
 <style lang="less" scoped>

@@ -11,7 +11,7 @@
       </v-list-item-avatar>
 
       <v-list-item-content>
-        <v-list-item-title>{{ user ? user.name : 'Jared Siminoff' }}</v-list-item-title>
+        <v-list-item-title>Jared</v-list-item-title>
       </v-list-item-content>
     </v-list-item>
 

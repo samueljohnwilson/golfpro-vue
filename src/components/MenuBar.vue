@@ -34,12 +34,6 @@ import { mapActions, mapGetters } from 'vuex';
 export default {
   name: 'MenuBar',
 
-  data: function() {
-    return {
-      user: true,
-    }
-  },
-
   computed: {
     ...mapGetters('user', [
       'user',
