@@ -30,6 +30,9 @@
           <ValidationProvider name="password" :rules="rules.password"  v-slot="{ errors, valid }">
             <v-text-field
               v-model="password"
+              :type="show ? 'text' : 'password'"
+              :append-icon="show ? 'visibility' : 'visibility_off'"
+              @click:append="show = !show"
               :error-messages="errors"
               :success="valid"
               label="Password"
@@ -67,6 +70,7 @@ export default {
     name: "",
     email: "",
     password: "",
+    show: false,
     rules
   }),
   components: {
