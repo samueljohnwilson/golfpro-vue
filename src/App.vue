@@ -3,23 +3,26 @@
     <MenuBar v-if="!user"/>
     <Navigation/>
     <v-content>
-      <Landing/>
+      <!-- <Landing/> -->
+      <Stats/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Landing from './components/Landing';
+// import Landing from './components/Landing';
 import Navigation from './components/Navigation';
 import MenuBar from './components/MenuBar';
+import Stats from './components/Stats';
 
 export default {
   name: 'App',
 
   components: {
-    Landing,
+    // Landing,
     Navigation,
     MenuBar,
+    Stats,
   },
 };
 </script>

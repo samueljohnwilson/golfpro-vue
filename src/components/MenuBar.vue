@@ -8,7 +8,6 @@
   >
     <div class="d-flex align-center">
       <v-img
-        alt="Vuetify Logo"
         class="shrink mr-2"
         contain
         src="../assets/golf-logo-title-white-no-sig.png"
@@ -23,15 +22,10 @@
   </v-app-bar>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'MenuBar',
-  computed: {
-    ...mapGetters('user', [
-      'user',
-    ])
-  },
   methods: {
     ...mapActions('navigation', [
       'openDrawer',

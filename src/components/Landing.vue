@@ -33,7 +33,7 @@ import RegisterModal from './RegisterModal.vue';
 
 export default {
   name: 'Landing',
-  data: function() {
+  data() {
     return {
       loginModal: false,
       registerModal: false,
