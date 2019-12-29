@@ -1,8 +1,6 @@
 <template>
-  <v-app
-    style="background-color: black"
-  >
-    <MenuBar/>
+  <v-app style="background-color: black">
+    <MenuBar v-if="!user"/>
     <Navigation/>
     <v-content>
       <Landing/>

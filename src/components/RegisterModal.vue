@@ -48,7 +48,7 @@
           <v-card-actions>
             <v-btn @click="clear">Clear</v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="green" @click="register" :disabled="invalid || !validated">
+            <v-btn color="green darken-1" @click="register" :disabled="invalid || !validated">
               Sign Up
             </v-btn>
           </v-card-actions>
@@ -57,7 +57,6 @@
     </v-dialog>
   </div>
 </template>
-
 <script>
 import {
   ValidationObserver,
@@ -67,14 +66,16 @@ import { rules } from '../validations';
 
 export default {
   name: 'RegisterModal',
-  data: () => ({
-    name: "",
-    email: "",
-    password: "",
-    show: false,
-    badRegistration: false,
-    rules
-  }),
+  data() {
+    return {
+      name: "",
+      email: "",
+      password: "",
+      show: false,
+      badRegistration: false,
+      rules
+    }
+  },
   components: {
     ValidationProvider,
     ValidationObserver
@@ -84,10 +85,10 @@ export default {
   },
   computed: {
     dialogState: {
-      get: function() {
+      get() {
         return this.dialog
       },
-      set: function(val) {
+      set(val) {
         if (!val) {
           this.$emit('close-modal');
         }

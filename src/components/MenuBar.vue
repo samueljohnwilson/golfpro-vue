@@ -16,14 +16,8 @@
         width="150"
       />
     </div>
-
     <v-spacer></v-spacer>
-
-    <v-icon
-      v-if="user"
-      @click="openDrawer"
-      large
-    >
+    <v-icon @click="openDrawer" large>
       menu
     </v-icon>
   </v-app-bar>
@@ -33,13 +27,11 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'MenuBar',
-
   computed: {
     ...mapGetters('user', [
       'user',
     ])
   },
-
   methods: {
     ...mapActions('navigation', [
       'openDrawer',

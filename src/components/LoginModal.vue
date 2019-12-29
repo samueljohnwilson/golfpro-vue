@@ -37,7 +37,7 @@
           <v-card-actions>
             <v-btn @click="clear">Clear</v-btn>
             <v-spacer></v-spacer>
-            <v-btn color="green" @click="passes(submit)" :disabled="invalid || !validated">
+            <v-btn color="green darken-1" @click="passes(submit)" :disabled="invalid || !validated">
               Log In
             </v-btn>
           </v-card-actions>
@@ -59,7 +59,7 @@ export default {
     ValidationProvider,
     ValidationObserver,
   },
-  data: function() {
+  data() {
     return {
       email: "",
       password: "",
@@ -72,10 +72,10 @@ export default {
   },
   computed: {
     dialogState: {
-      get: function() {
+      get() {
         return this.dialog
       },
-      set: function(val) {
+      set(val) {
         if (!val) {
           this.$emit('close-modal');
         }

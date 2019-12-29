@@ -30,16 +30,15 @@
 <script>
 import LoginModal from './LoginModal.vue';
 import RegisterModal from './RegisterModal.vue';
+
 export default {
   name: 'Landing',
-
   data: function() {
     return {
       loginModal: false,
       registerModal: false,
     }
   },
-
   components: {
     LoginModal,
     RegisterModal,
