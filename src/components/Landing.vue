@@ -4,40 +4,45 @@
     text-center
     wrap
   >
-    <Modal
-      @close-modal="dialog = false"
-      :dialog="dialog"
+    <RegisterModal
+      @close-modal="registerModal = false"
+      :dialog="registerModal"
+    />
+    <LoginModal
+      @close-modal="loginModal = false"
+      :dialog="loginModal"
     />
     <v-img src="../assets/golfpro-background-small.png" max-width="250" contain/>
     <div class="auth-wrapper">
-      <router-link to='/home'>
-        <v-btn
-          large
-          ripple
-          outlined
-          color="white"
-          @click.stop="dialog = true"
-        >
-          Log In
-        </v-btn>
-      </router-link>
-      <span class="signup">Not a member? Then sign up <a>here</a>.</span>
+      <v-btn
+        large
+        ripple
+        outlined
+        color="white"
+        @click.stop="loginModal = true"
+      >
+        Log In
+      </v-btn>
+      <span class="signup">Not a member? Then sign up <a @click.stop="registerModal = true">here</a>.</span>
     </div>
   </v-layout>
 </template>
 <script>
-import Modal from './Modal.vue';
+import LoginModal from './LoginModal.vue';
+import RegisterModal from './RegisterModal.vue';
 export default {
   name: 'Landing',
 
   data: function() {
     return {
-      dialog: false,
+      loginModal: false,
+      registerModal: false,
     }
   },
 
   components: {
-    Modal,
+    LoginModal,
+    RegisterModal,
   }
 };
 </script>
