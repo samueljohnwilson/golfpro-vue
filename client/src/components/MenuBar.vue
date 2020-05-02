@@ -8,7 +8,6 @@
   >
     <div class="d-flex align-center">
       <v-img
-        alt="Vuetify Logo"
         class="shrink mr-2"
         contain
         src="../assets/golf-logo-title-white-no-sig.png"
@@ -16,9 +15,7 @@
         width="150"
       />
     </div>
-
     <v-spacer></v-spacer>
-
     <v-icon
       v-if="user"
       @click="openDrawer"
@@ -33,19 +30,11 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'MenuBar',
-
-  data: function() {
-    return {
-      user: true,
-    }
-  },
-
   computed: {
     ...mapGetters('user', [
       'user',
-    ])
+    ]),
   },
-
   methods: {
     ...mapActions('navigation', [
       'openDrawer',
