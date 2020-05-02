@@ -1,16 +1,16 @@
 <template>
   <v-app style="background-color: black">
-    <MenuBar v-if="!user"/>
-    <Navigation/>
+    <MenuBar />
+    <Navigation />
     <v-content>
-      <!-- <Landing/> -->
-      <Stats/>
+      <Landing v-if="!user" />
+      <Stats v-else />
     </v-content>
   </v-app>
 </template>
 
 <script>
-// import Landing from './components/Landing';
+import Landing from './components/Landing';
 import Navigation from './components/Navigation';
 import MenuBar from './components/MenuBar';
 import Stats from './components/Stats';
@@ -19,7 +19,7 @@ export default {
   name: 'App',
 
   components: {
-    // Landing,
+    Landing,
     Navigation,
     MenuBar,
     Stats,

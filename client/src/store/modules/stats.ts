@@ -1,19 +1,25 @@
+import { IContext } from '../types';
+
+interface IStatsState {
+  average: Number;
+}
+
 const state = {
   average: 1,
 };
 
 const getters = {
-  average: (_state) => _state.average,
+  average: (_state: IStatsState) => _state.average,
 };
 
 const actions = {
-  setAverage({ commit }, value) {
+  setAverage({ commit }: IContext, value: Number) {
     commit('SET_AVERAGE', value);
   },
 };
 
 const mutations = {
-  ['SET_AVERAGE'](_state, value) {
+  ['SET_AVERAGE'](_state: IStatsState, value: Number) {
     _state.average = value;
   },
 };

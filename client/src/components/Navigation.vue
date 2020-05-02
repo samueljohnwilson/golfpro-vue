@@ -17,6 +17,7 @@
     <v-list dense>
       <v-list-item
         v-for="item in items"
+        v-on:click="item.action"
         :key="item.title"
         link
       >
@@ -38,11 +39,11 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'My Stats', icon: 'insert_chart' },
-        { title: 'My Courses', icon: 'golf_course' },
-        { title: 'Account', icon: 'account_box' },
-        { title: 'Log Out', icon: 'highlight_off' },
+        { title: 'Home', icon: 'dashboard', action: () => this.$router.push('/') },
+        { title: 'My Stats', icon: 'insert_chart', action: () => this.$router.push('/stats') },
+        { title: 'My Courses', icon: 'golf_course', action: () => this.$router.push('/courses') },
+        { title: 'Account', icon: 'account_box', action: () => this.$router.push('/account') },
+        { title: 'Log Out', icon: 'highlight_off', action: this.logOut },
       ],
     }
   },
@@ -66,6 +67,13 @@ export default {
     ...mapActions('navigation', [
       'closeDrawer',
     ]),
+    ...mapActions('user', [
+      'setUser',
+    ]),
+    logOut() {
+      this.setUser(null);
+      this.$router.push('/')
+    },
   },
 };
 </script>
